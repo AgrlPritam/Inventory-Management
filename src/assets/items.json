@@ -1,0 +1,77 @@
+[
+    {
+        "itemCategory": [
+            {
+                "screws": [
+                    {
+                        "id": 1,
+                        "Type": "3mm",
+                        "Quantity": 100000,
+                        "Unit": "Number",
+                        "Cost": 5
+                    },
+                    {
+                        "id": 2,
+                        "Type": "5mm",
+                        "Quantity": 100000,
+                        "Unit": "Number",
+                        "Cost": 7
+                    },
+                    {
+                        "id": 3,
+                        "Type":"10mm",
+                        "Quantity": 100000,
+                        "Unit": "Number",
+                        "Cost": 10
+                    }
+                ],
+                "paints": [
+                    {
+                        "id": 1,
+                        "Type": "Emulsion",
+                        "Quantity": 150000,
+                        "Unit": "litres",
+                        "Cost": 100
+                    },
+                    {
+                        "id": 2,
+                        "Type":"Cement",
+                        "Quantity":100000,
+                        "Unit": "litres",
+                        "Cost": 80
+                    },
+                    {
+                        "id": 3,
+                        "Type": "Primer",
+                        "Quantity": 100000,
+                        "Unit": "litres",
+                        "Cost": 140
+                    }
+                ],
+                "pipes": [
+                    {
+                        "id": 1,
+                        "Type": "1.5inch PVC",
+                        "Quantity": 10,
+                        "Unit": "meters",
+                        "Cost": 20
+                    },
+                    {
+                        "id": 2,
+                        "Type": "1.5inch Deluxe PVC",
+                        "Quantity": 10,
+                        "Unit": "meters",
+                        "Cost": 30
+                    },
+                    {
+                        "id": 3,
+                        "Type": "0.5inch Copper",
+                        "Quantity": 15,
+                        "Unit": "meters",
+                        "Cost": 130
+                    }
+                ]
+            }
+        ]
+    }
+]

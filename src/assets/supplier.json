@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "Name": "ABC Supplier",
+        "Address": "ABC Building, 123 Street, West Abbey, 23015",
+        "Phone": 1234567890,
+        "Email": "ABC@abc.com",
+        "Website": "www.abc.com"
+    },
+    {
+        "id": 2,
+        "Name": "XYZ Supplier",
+        "Address": "XYZ Building, 789 Street, East Abbey, 23011",
+        "Phone": 9876543210,
+        "Email": "XYZ@xyz.com",
+        "Website": "www.xyz.com"
+    },
+    {
+        "id": 3,
+        "Name": "PQR Supplier",
+        "Address": "PQR Building, 456 Street, North Abbey, 23007",
+        "Phone": 9876501234,
+        "Email": "PQR@pqr.com",
+        "Website": "www.pqr.com"
+    }
+]
