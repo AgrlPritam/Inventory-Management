@@ -25,13 +25,13 @@ class SupplierPage extends Component{
                     ))}
                 </DropdownButton>
                 <div>
-                    <p>Supplier Details:</p>
+                    <p><strong>Supplier Details:</strong></p>
                     <p>
-                        Name: {SupplierFiltered.Name} <br />
-                        Address: {SupplierFiltered.Address}<br />
-                        Phone: {SupplierFiltered.Phone}<br />
-                        Email: {SupplierFiltered.Email}<br/>
-                        Website: {SupplierFiltered.Website}
+                        <strong>Name: </strong><em>{SupplierFiltered.Name}</em> <br />
+                        <strong>Address: </strong><em>{SupplierFiltered.Address}</em><br />
+                        <strong>Phone: </strong><em>{SupplierFiltered.Phone}</em><br />
+                        <strong>Email: </strong><em>{SupplierFiltered.Email}</em><br/>
+                        <strong>Website: </strong><em>{SupplierFiltered.Website}</em>
                     </p>
                 </div>
                 
