@@ -15,12 +15,18 @@ class ItemList extends Component{
         }
     }
     handleItemCategory = (e) => {
+        if(!isNaN(this.state.totalItemCost)){
+            this.setState({totalItemCost: NaN, selectedQuantity: ''})
+        }
         this.setState({
             selectedItemCategory: e,
             selectedItemType: (Items[0].itemCategory[0][e][0].Type)
         })
     }
     handleItemType=(e) => {
+        if(!isNaN(this.state.totalItemCost)){
+            this.setState({totalItemCost: NaN, selectedQuantity: ''})
+        }
         this.setState({
             selectedItemType: e,
             unitCost: Items[0].itemCategory[0][this.state.selectedItemCategory].filter((Item) => Item.Type === e)[0].Cost
@@ -67,7 +73,7 @@ class ItemList extends Component{
                     </DropdownButton>
                 </td>
                 <td>{this.state.selectedItemType !== '' && <input type='number' 
-                        placeholder={Items[0].itemCategory[0][this.state.selectedItemCategory][0].Unit}
+                        placeholder={"in " +Items[0].itemCategory[0][this.state.selectedItemCategory][0].Unit}
                         min="1"
                         value={this.state.selectedQuantity}
                         onChange={this.handleQuantity.bind(this)}
