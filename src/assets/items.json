@@ -54,21 +54,21 @@
                         "Type": "1.5inch PVC",
                         "Quantity": 10,
                         "Unit": "meters",
-                        "Cost": 20
+                        "Cost": 200
                     },
                     {
                         "id": 2,
                         "Type": "1.5inch Deluxe PVC",
                         "Quantity": 10,
                         "Unit": "meters",
-                        "Cost": 30
+                        "Cost": 300
                     },
                     {
                         "id": 3,
                         "Type": "0.5inch Copper",
                         "Quantity": 15,
                         "Unit": "meters",
-                        "Cost": 130
+                        "Cost": 1300
                     }
                 ]
             }
