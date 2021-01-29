@@ -38,3 +38,13 @@ table{
 .invoices__table {
   padding-top: 15px;
 }
+.invoice_message {
+  text-align: center;
+  color: #364051;
+}
+.invoice_button_wrapper {
+  text-align: center;
+}
+.invoice_button {
+  position: absolute;
+}
