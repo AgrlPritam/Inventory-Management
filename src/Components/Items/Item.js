@@ -11,7 +11,8 @@ class ItemList extends Component{
             selectedQuantity: '',
             unitCost: 0,
             totalItemCost : NaN,
-            error: ''
+            error: '',
+            isRowSubmitted: false
         }
     }
     handleItemCategory = (e) => {
@@ -41,6 +42,24 @@ class ItemList extends Component{
             totalItemCost: parseInt(quantity,10) * Items[0].itemCategory[0][this.state.selectedItemCategory].filter((Item) => Item.Type === this.state.selectedItemType)[0].Cost
         })
     }
+    handleEachRow = () => {
+        if(this.state.selectedItemCategory && 
+            this.state.selectedItemType && 
+            this.state.selectedQuantity && 
+            !isNaN(this.state.totalItemCost))
+            {
+            this.setState({isRowSubmitted: true}, () => {
+                if(this.props.onChange){
+                    this.props.onChange([this.state.selectedItemCategory,
+                        this.state.selectedItemType,
+                        this.state.selectedQuantity,
+                        this.state.totalItemCost]
+                    )
+                }
+            })
+        }
+        //console.log(this.state.selectedItemCategory, this.state.selectedItemType, this.state.selectedQuantity, this.state.totalItemCost);
+    }
 
     render(){
         var ItemCategories = ""
@@ -49,7 +68,7 @@ class ItemList extends Component{
         return (
             <Fragment>
                 <td>
-                    <DropdownButton title={this.state.selectedItemCategory}>
+                    <DropdownButton title={this.state.selectedItemCategory} disabled={this.state.isRowSubmitted}>
                         {ItemCategories.map((ItemCategory) => (
                             <Dropdown.Item key={ItemCategory} 
                                 eventKey={ItemCategory} 
@@ -61,7 +80,7 @@ class ItemList extends Component{
                     </DropdownButton>
                 </td>
                 <td>
-                    <DropdownButton title={this.state.selectedItemType}>
+                    <DropdownButton title={this.state.selectedItemType} disabled={this.state.isRowSubmitted}>
                         {Items[0].itemCategory[0][this.state.selectedItemCategory].map((ItemType) => (
                             <Dropdown.Item key={ItemType.Type} 
                                 eventKey={ItemType.Type} 
@@ -76,12 +95,15 @@ class ItemList extends Component{
                         placeholder={"in " +Items[0].itemCategory[0][this.state.selectedItemCategory][0].Unit}
                         min="1"
                         value={this.state.selectedQuantity}
-                        onChange={this.handleQuantity.bind(this)}
+                        onChange={this.handleQuantity.bind(this)} disabled={this.state.isRowSubmitted}
                         required
                     />}
                 </td>
                 <td>
                 {!isNaN(this.state.totalItemCost) && <p>{this.state.totalItemCost}</p>}
+                </td>
+                <td>
+                    {!this.state.isRowSubmitted && <button className="btn btn-sm btn-secondary" onClick={this.handleEachRow}>Done</button>}
                 </td>
             </Fragment>
         )
