@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import InvoiceUpload from './InvoiceUpload'
 import invoices from '../assets/invoices.json'
 
 class InvoicePage extends Component{
@@ -10,7 +11,8 @@ class InvoicePage extends Component{
             deliveryDt: '',
             totalCost: '',
             error: '',
-            filledDetails: false
+            filledDetails: false,
+            invoiceUploaded: false
         }
     }
     onInvoiceNumberChange = (e) => {
@@ -52,6 +54,10 @@ class InvoicePage extends Component{
             }
         }
         console.log(invoices);
+    }
+
+    fileUploaded = (props) => {
+        this.setState({invoiceUploaded: props})
     }
     render() {
         return (
@@ -115,15 +121,16 @@ class InvoicePage extends Component{
                             </tr>
                         </tbody>
                 </table>
-                {!this.state.filledDetails && 
+                <InvoiceUpload onChange={this.fileUploaded}/>
+                {(!this.state.filledDetails && this.state.invoiceUploaded) && <div className="invoice_button_wrapper">
                     <button 
-                    className="btn btn-outline-dark btn-lg" 
+                    className="btn btn-success btn-lg invoice_button" 
                     onClick={this.submitInvoice} 
                     disabled={!this.state.invoiceNumber}
                     >
                         NEXT
                     </button>
-                }
+                </div>}
             </div>
         )
     }

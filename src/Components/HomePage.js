@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import SupplierPage from './SupplierPage'
 import ItemsPage from './Items/ItemsPage'
 import InvoicePage from './InvoicePage'
 
@@ -21,8 +20,8 @@ export default class HomePage extends Component {
         return(
             <div>
                 <InvoicePage onChange={this.handleInvoiceSubmit}/>
+                <br/>
                 {(this.state.isInvoiceFilled && <ItemsPage />)}
-                {(this.state.isInvoiceFilled && <SupplierPage />)}
             </div>
         )
     }
